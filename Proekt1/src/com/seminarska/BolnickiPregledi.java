@@ -135,10 +135,65 @@ final JRadioButton buton=new JRadioButton("Maski");
     recordBtn.setBounds(210, 500, 150, 20);
     comCon.add(recordBtn);
 
-	
-
-	}
+recordBtn.setToolTipText("Se procesira");
+    
+    recordBtn.addActionListener(new ActionListener() {
+        
+    	
+    public void actionPerformed(ActionEvent event) {
+               if(!(txtIme.getText().equals(""))&&!(txtPrezime.getText().equals(""))&&!(txtmatbr.getText().equals("")))
+               {
+        	   try
+        	   {
+	        	   FileWriter record = new FileWriter("G:/record.txt");
+	               BufferedWriter out = new BufferedWriter(record);
+	               out.write("-----------Podatoci za pacientot-------------\r\n");
+	               out.write("Ime: " + txtIme.getText() + "\r\n");
+	               out.write("Prezime: " + txtPrezime.getText() + "\r\n");
+	               out.write("Maticen broj: " + lblmatbr.getText() + "\r\n");
+	               
+	               
+	               if(buton.isSelected())
+	            	   
+	               {
+	            	   out.write("Pol: " + buton.getText() + "\r\n");
+	               }
+	               if(buton1.isSelected())
+	               {
+	            	   out.write("Pol: " + buton1.getText() + "\r\n");
+	           
+	               }
+	               out.write("Doktor: " + combo.getSelectedItem() + "\r\n");
+	               
+	               out.write("-----------------------------------");
+	               
+	               out.close();
+	               
+	             JOptionPane.showMessageDialog(comCon,"Pregledot e uspesno zakazan");
+	               
+	               
+	               
+	               txtIme.setText("");
+	               txtPrezime.setText("");
+        	   }
+        	   catch(Exception e){
+        		   
+        		   
+        		   
+        	   }
+        	   }
+               else
+               {
+            	   JOptionPane.showMessageDialog(comCon, "Popolnete gi site polinja!!!!");
+            	 
+               }
+               }
+           }
+   );
+}
     
 }
+
+
 
 
