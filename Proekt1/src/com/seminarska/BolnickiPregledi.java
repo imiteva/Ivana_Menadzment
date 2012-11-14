@@ -90,6 +90,51 @@ final JLabel lblNaslov=new JLabel("Forma za zakazuvanje pregledi vo Opsta bolnic
 	final JLabel lblpol=new JLabel("Odberi pol ");
 	lblpol.setBounds(10, 210, 100, 20);
 	comCon.add(lblpol);
+
+final JRadioButton buton=new JRadioButton("Maski");
+	final JRadioButton buton1=new JRadioButton("Zenski");
+	
+	buton.setSelected(true);
+	
+	buton.setActionCommand("Maski");
+	buton1.setActionCommand("Zenski");
+	
+	buton.setBounds(20, 240, 100, 15);
+	buton1.setBounds(120, 240, 250, 15);
+	
+	comCon.add(buton);
+	comCon.add(buton1);
+
+	ButtonGroup grupa=new ButtonGroup();
+	grupa.add(buton);
+	grupa.add(buton1);
+	
+
+	final JLabel lbldoktor=new JLabel("Odberete doktor kaj kogo sakate da zakazete pregled ");
+	lbldoktor.setBounds(10, 270, 400, 20);
+	comCon.add(lbldoktor);
+	
+	String [] titleList={"Dr.Zan Mitrev", "Dr.Aleksandar Nikolik","Dr.Vladimir Belostotski","Dr.Jovan Mirceski","Dr.Saso Mladenoski","Dr.Aleksandra Dimova", " Dr.Gjorgje Dimovski"};
+	final JComboBox combo=new JComboBox(titleList);
+	combo.setSelectedIndex(1);
+	combo.setBounds(30, 300, 250, 20);
+	comCon.add(combo);
+	
+	final JLabel lblZabeleska=new JLabel("Vnesi zabeleska za pacientot");
+	lblZabeleska.setBounds(10, 330, 400, 20);
+	comCon.add(lblZabeleska);
+	
+
+	final JTextArea txtDijagnoza=new JTextArea();
+	txtDijagnoza.setBounds(10,360,250,100);
+	txtDijagnoza.setLineWrap(true);
+	//txtDijagnoza.s
+	comCon.add(txtDijagnoza);
+	
+	JButton recordBtn = new JButton("Zakazi pregled");
+    recordBtn.setBounds(210, 500, 150, 20);
+    comCon.add(recordBtn);
+
 	
 
 	}
